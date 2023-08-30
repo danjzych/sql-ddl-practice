@@ -33,7 +33,7 @@ INSERT INTO moons (moon_name, planet)
             ('Deimos', 'Mars');
 
 SELECT planets.planet_name, stars.star_name,
-    SUM(CASE WHEN moons.planet = planets.planet_name THEN 1 ELSE 0 END) as moon_count
+    COUNT(moons.moon_name) as moon_count
     FROM planets
     JOIN stars ON planets.orbits_around = stars.star_name
     LEFT JOIN moons on planets.planet_name = moons.planet
