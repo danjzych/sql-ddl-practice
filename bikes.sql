@@ -21,5 +21,6 @@ CREATE TABLE order_items (
     order_id REFERENCES orders NOT NULL,
     customer REFERENCES customers NOT NULL,
     code REFERENCES bikes NOT NULL,
-    total_cost NUMERIC(10, 2) NOT NULL
+    total_cost NUMERIC(10, 2) NOT NULL,
+    note TEXT
 );
